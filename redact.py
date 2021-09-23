@@ -26,4 +26,5 @@ def filted_message():
     subtitle = target_json['subtitle']
     return message, subtitle
 
+filted_message()
 
