@@ -1,6 +1,5 @@
 import http.client
 import json
-from re import T
 import sys
 import urllib.parse
 
