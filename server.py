@@ -7,10 +7,10 @@
 
 import http.server
 import socketserver
-from redact import filted_message
+from redact import redacted_message
 import sys
 
-[message, subtitle] = filted_message()
+[message, subtitle] = redacted_message()
 
 PORT = 8080
 class ExampleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):

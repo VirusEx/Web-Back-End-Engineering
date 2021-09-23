@@ -4,7 +4,7 @@ import sys
 import urllib.parse
 
 
-def filted_message():
+def redacted_message():
     foaas = http.client.HTTPSConnection("foaas.com")
     Purgo = http.client.HTTPSConnection("www.purgomalum.com")
 
@@ -26,5 +26,5 @@ def filted_message():
     subtitle = target_json['subtitle']
     return message, subtitle
 
-filted_message()
+redacted_message()
 
