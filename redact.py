@@ -19,12 +19,11 @@ def redacted_message():
     flitered_message = json.loads(Purgo_response.read())
     target_json['message'] = flitered_message['result']
 
-    json_str = json.dumps(target_json, indent=4)
-    print(json_str)
+    return target_json
 
-    message = target_json['message']
-    subtitle = target_json['subtitle']
-    return message, subtitle
 
-redacted_message()
+if __name__ == "__main__":
+   # stuff only to run when not called via 'import' here
+   json_str = json.dumps(redacted_message(), indent=4)
+   print(json_str)
 

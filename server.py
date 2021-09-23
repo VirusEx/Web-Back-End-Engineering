@@ -10,8 +10,6 @@ import socketserver
 from redact import redacted_message
 import sys
 
-[message, subtitle] = redacted_message()
-
 PORT = 8080
 class ExampleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
 
@@ -21,8 +19,10 @@ class ExampleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
             self.send_header('Content-Type', 'text/html; charset=utf-8')
             self.end_headers()
 
-            # message = "Why? Because fuck you, that's why!! "
-            # subtitle = "- ProfAvery"
+            target_json = redacted_message();
+            message = target_json['message']
+            subtitle = target_json['subtitle']
+
             payload = f"""
             <html>
                 <head> 
